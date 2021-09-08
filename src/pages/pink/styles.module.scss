@@ -1,0 +1,48 @@
+@keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: translate(0, -100vh) scale(0.2);
+  }
+}
+.bubble {
+  $particle-count: 20;
+  $particle-size: 10rem;
+  $particle-min-speed: 5000;
+  $particle-max-speed: 15000;
+  $particle-max-delay: 12000;
+
+  opacity: 0;
+  position: absolute;
+  bottom: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(#ba7575, 0.8);
+  border-radius: 50%;
+
+  @for $i from 1 through 20 {
+    $speed: random($particle-max-speed) + 0ms;
+    @if $speed < $particle-min-speed {
+      $speed: $particle-min-speed + 0ms;
+    }
+
+    &:nth-child(#{$i}) {
+      left: random(100) + 0%;
+      animation: blow $speed infinite;
+      animation-delay: random($particle-max-delay) + 0ms;
+    }
+  }
+}
+
+.particles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
