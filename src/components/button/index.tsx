@@ -12,13 +12,15 @@ export const ButtonComponent = (props: ButtonInterface) => {
     setMode(selectedTheme);
     props.setSelectedTheme(selectedTheme);
   };
-
+  console.log(localTheme);
   return (
     <ButtonStyled
       onClick={() =>
         themeSwitcher(
-          localTheme.name === "Pink"
-            ? themesFromStore.yellow
+          localTheme
+            ? localTheme.name === "Pink"
+              ? themesFromStore.yellow
+              : themesFromStore.pink
             : themesFromStore.pink
         )
       }

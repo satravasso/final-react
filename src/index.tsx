@@ -20,9 +20,6 @@ const Index = () => {
     setSelectedTheme(theme);
   }, [themeLoaded]);
 
-  console.log(themeLoaded);
-  console.log(selectedTheme);
-
   return (
     <React.StrictMode>
       {themeLoaded && (

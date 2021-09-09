@@ -13,7 +13,6 @@ export const useTheme = () => {
 
   useEffect(() => {
     const localTheme = getFromLS("theme");
-    console.log(localTheme);
     localTheme ? setTheme(localTheme) : setTheme(themes.yellow);
     setThemeLoaded(true);
   }, []);
