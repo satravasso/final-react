@@ -10,6 +10,7 @@ import { HomePage } from "./pages/home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { PinkPage } from "./pages/pink";
 import { YellowPage } from "./pages/yellow";
+import * as serviceWorkerRegistration from './serviceWorkerRegistration.js';
 
 const Index = () => {
   setToLS("all-themes", themes.theme);
@@ -54,3 +55,5 @@ ReactDOM.render(
 
   document.getElementById("root")
 );
+
+serviceWorkerRegistration.register();
