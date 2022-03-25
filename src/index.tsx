@@ -57,3 +57,14 @@ ReactDOM.render(
 );
 
 serviceWorkerRegistration.register();
+
+//@ts-ignore
+window.OneSignal = window.OneSignal || [];
+//@ts-ignore
+OneSignal.push(function() {
+  //@ts-ignore
+  OneSignal.init({
+    appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
+  });
+});
+

@@ -35,28 +35,9 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Sabrina Portfólio</title>
-    <script type="text/javascript">
-      
-      if ('serviceWorker' in navigator) {
-       window.addEventListener('load', function() {
-          navigator.serviceWorker.register('./sw.js').then(function(registration) {
-            // Registration was successful
-            console.log('ServiceWorker registration successful');
-          }, function(err) {
-            // Registration failed
-            console.log('ServiceWorker registration failed: ', err);
-          });
-  });
-  }</script>
+
     <script type="text/javascript" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script type="text/javascript">
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
-        });
-      });
-    </script>
+    
   </head>
   <body
     style="margin: 0; font-family: Arial, Helvetica, sans-serif; height: 100vh"
