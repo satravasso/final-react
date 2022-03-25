@@ -50,29 +50,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
-       function showNotification() {
-        console.log('function')
-        const notf = new Notification("Abelhas são importantes para a natureza",
-        {
-            body: "Hey abelhinha, vem sempre aqui?"
-        }
-        )
-        console.log(notf)
-    }
-    
-    console.log(Notification.permission) 
-    if(Notification.permission === 'granted'){
-        alert('Permitido!!')
-        showNotification();
-    } else if(Notification.permission !== 'denied'){
-        console.log('a')
-        Notification.requestPermission().then(permission => {
-            console.log('ff')
-            showNotification();
-        })
-    }
-    
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
+        });
+      });
     </script>
   </body>
 </html>
