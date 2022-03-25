@@ -38,9 +38,8 @@
     <script>
       console.log('servicework')
       console.log('serviceWorker' in navigator)
-      console.log(process.env.NODE_ENV === 'production')
       
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
           navigator.serviceWorker.register('/service-worker.js');
       });
