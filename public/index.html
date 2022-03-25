@@ -34,6 +34,15 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Sabrina Portfólio</title>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
+        });
+      });
+    </script>
   </head>
   <body
     style="margin: 0; font-family: Arial, Helvetica, sans-serif; height: 100vh"
@@ -50,14 +59,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
-        });
-      });
-    </script>
   </body>
 </html>
