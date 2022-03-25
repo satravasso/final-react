@@ -50,5 +50,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+       function showNotification() {
+        console.log('function')
+        const notf = new Notification("Abelhas são importantes para a natureza",
+        {
+            body: "Hey abelhinha, vem sempre aqui?"
+        }
+        )
+        console.log(notf)
+    }
+    
+    console.log(Notification.permission) 
+    if(Notification.permission === 'granted'){
+        alert('Permitido!!')
+        showNotification();
+    } else if(Notification.permission !== 'denied'){
+        console.log('a')
+        Notification.requestPermission().then(permission => {
+            console.log('ff')
+            showNotification();
+        })
+    }
+    
+    </script>
   </body>
 </html>
