@@ -24,7 +24,7 @@ const Index = () => {
 
   useEffect(() => {
     OneSignal.init({
-      appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730"
+      appId: "4cf298c1-ec30-4a18-8c10-13190fd3f6b"
     });
   }, []);
 
