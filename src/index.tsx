@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { PinkPage } from "./pages/pink";
 import { YellowPage } from "./pages/yellow";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration.js';
+import OneSignal from 'react-onesignal';
 
 const Index = () => {
   setToLS("all-themes", themes.theme);
@@ -20,6 +21,12 @@ const Index = () => {
   useEffect(() => {
     setSelectedTheme(theme);
   }, [themeLoaded]);
+
+  useEffect(() => {
+    OneSignal.init({
+      appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730"
+    });
+  }, []);
 
   return (
     <React.StrictMode>
@@ -57,14 +64,4 @@ ReactDOM.render(
 );
 
 serviceWorkerRegistration.register();
-
-// //@ts-ignore
-// window.OneSignal = window.OneSignal || [];
-// //@ts-ignore
-// OneSignal.push(function() {
-//   //@ts-ignore
-//   OneSignal.init({
-//     appId: "191c70a3-f0cf-44ae-aa5c-42f761c07730",
-//   });
-// });
 
